@@ -1,3 +1,100 @@
 body {
     background-color: #FAF5F0;
 }
+
+:root {
+    --button_text: #ffffff;
+    --button_color: #8F7B5F;
+    
+    --button_join_text: #ffffff;
+    --button_join_color: #707372;
+
+    --button_radius: 0px;
+    --button_shadow: 0px 0px 10px #00000024;
+}
+
+.btn.btn--primary.btn--brand-2.btn--invert{
+    color: var(--button_text);
+    background-color: var(--button_color);
+    border-radius: var(--button_radius);
+    padding: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 28%;
+    text-align:left;
+    font-size:22px;
+    box-shadow: var(--button_shadow);
+}
+
+.button-module .frame__cell-item:has(.btn.btn--primary.btn--brand-2.btn--invert) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-left: 0;
+}
+
+.btn.btn--primary.btn--brand-2.btn--invert::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: currentColor;
+            color: var(--button_text);
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(1):after {
+            -webkit-mask: url("https://www.testsite.lokalbank.no/-/media/lbamalbank/icons/svg/loan_house.svg") no-repeat center / contain;
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(2):after {
+            -webkit-mask: url("https://www.testsite.lokalbank.no/-/media/lbamalbank/icons/svg/insurance_umbrella.svg") no-repeat center / contain;
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(3):after {
+            -webkit-mask: url("https://www.testsite.lokalbank.no/-/media/lbamalbank/icons/svg/savings_bill") no-repeat center / contain;
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(4):after {
+            -webkit-mask: url("https://www.testsite.lokalbank.no/-/media/lbamalbank/icons/svg/kyc_question.svg") no-repeat center / contain;
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(5):after {
+            -webkit-mask: url("https://www.testsite.lokalbank.no/-/media/lbamalbank/icons/svg/consent_approve.svg") no-repeat center / contain;
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(6):after {
+            -webkit-mask: url("https://www.testsite.lokalbank.no/-/media/lbamalbank/icons/svg/new_customer.svg") no-repeat center / contain;
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(6) {
+    background-color: var(--button_join_color);
+    color: var(--button_join_text);
+}
+.btn.btn--primary.btn--brand-2.btn--invert:nth-of-type(6):after {
+            background-color: currentColor;
+            color: var(--button_join_text);
+}
+
+
+@media (min-width: 1160px) {
+    .button-module .frame__cell:has(.btn.btn--primary.btn--brand-2.btn--invert),.button-module .frame__cell-item:has(.btn.btn--primary.btn--brand-2.btn--invert) {
+        max-width: 100%;
+        margin-left: 0;
+        padding:0px;
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {   
+    .btn.btn--primary.btn--brand-2.btn--invert{
+        padding: 10px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        max-width: 45%;
+        font-size:16px;
+    }
+    .btn.btn--primary.btn--brand-2.btn--invert::after {
+                width: 28px;
+                height: 28px;
+                right: 8px;
+    }
+}
